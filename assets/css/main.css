@@ -3317,3 +3317,27 @@ input, select, textarea {
 			}
 
 	}
+
+
+/* === UPDATES === */
+
+/* === Professional Experience layout improvement === */
+#three .features article {
+    display: flex;
+    align-items: center
+}
+
+#three .features article .image {
+    flex: 0 0 200px;   /* controls image column width */
+}
+
+#three .features article .inner {
+    flex: 1;          /* text takes remaining space */
+}
+
+
+/* === Reduce spacing between Professional Experience items === */
+#three .features article {
+    margin-bottom: 0.1em;
+	margin-top: 0.1em;
+}
