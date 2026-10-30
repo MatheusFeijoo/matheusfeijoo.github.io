@@ -15,7 +15,7 @@ h1.name .dot{color:var(--accent)}
 .meta strong{font-weight:500;font-size:15px}
 
 /* photo beside the intro */
-.ph{display:none;object-fit:cover;object-position:50% 24%}
+.ph{display:none;object-fit:cover;object-position:50% 40%}
 .ph-card{display:block;flex:none;width:88px;height:88px;border-radius:50%;border:1px solid var(--line-strong);box-shadow:0 0 0 5px var(--bg),0 0 0 6px var(--line)}
 
 /* research: timeline of topics on the left, details on the right. The current topic's bar stays highlighted. */

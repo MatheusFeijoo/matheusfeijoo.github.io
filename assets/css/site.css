@@ -34,6 +34,7 @@
 }
 
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{margin:0;background-color:var(--bg);background-image:radial-gradient(var(--dot-static) 1px,transparent 1.4px);background-size:14px 14px;background-attachment:fixed;color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%}
@@ -82,8 +83,21 @@ section.s{padding-block:clamp(64px,8vw,104px);border-bottom:1px solid var(--line
 .more{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
 .more:hover{color:var(--accent)}
 
-footer{border-top:1px solid var(--line);padding-block:22px}
-footer .in{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--faint)}
+/* footer: links on a night band that turns into the Rio scene */
+.site-foot{margin-top:40px;border-top:1px solid var(--line);background:linear-gradient(to bottom,transparent,#0d1426 70%)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(2,minmax(0,1fr));gap:32px;padding-block:56px 36px}
+.foot-brand b{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.foot-brand p{margin:10px 0 14px;color:var(--muted);max-width:46ch;font-size:15px}
+.foot-mail{font-family:var(--mono);font-size:14px;color:var(--accent)}
+.foot-col{display:grid;align-content:start;gap:8px;font-size:14.5px}
+.foot-col h2{margin:0 0 6px;font-size:14px;font-weight:600;color:var(--text)}
+.foot-col a{color:var(--muted)}
+.foot-col a:hover,.foot-mail:hover{color:var(--accent)}
+.foot-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--faint);padding-block:18px;border-top:1px solid var(--line)}
+.foot-scene{position:relative;height:clamp(220px,28vw,360px);background:#0d1426}
+.foot-scene canvas{display:block;width:100%;height:100%}
+.scene-cap{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:12px;font-family:var(--mono);font-size:11px;color:rgba(226,246,241,.45)}
+@media (max-width:720px){.foot-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.foot-brand{grid-column:1/-1}}
 
 /* tuner (draft only) */
 .tuner{position:fixed;z-index:20;right:max(16px,calc(env(safe-area-inset-right,0px) + 16px));bottom:calc(env(safe-area-inset-bottom,0px) + 16px);background:var(--surface);border:1px solid var(--line-strong);border-radius:12px;padding:14px;display:grid;gap:10px;box-shadow:0 20px 50px #00000059;width:262px;font-size:12px}

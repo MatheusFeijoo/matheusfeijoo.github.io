@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="{{ page_desc | escape }}">
 <meta name="twitter:image" content="{{ site.author.image | absolute_url }}">
 <meta name="theme-color" content="#0b0b10">
-<link rel="icon" href="{{ '/images/avatar.jpg' | relative_url }}">
+<link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,9 +59,26 @@
 
 {{ content }}
 
-<footer><div class="in"><span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span><span>San Sebastián · Rio de Janeiro</span></div></footer>
+<footer class="site-foot">
+  <div class="in foot-grid">
+    <div class="foot-brand">
+      <b>{{ site.author.name }}</b>
+      <p>Data scientist and professor at TECNUN, University of Navarra. Research on disaster resilience, flood economic losses, machine learning and FAIR data.</p>
+      <a class="foot-mail" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    </div>
+    <nav class="foot-col" aria-label="Site"><h2>Site</h2>
+      <a href="{{ '/#research' | relative_url }}">Research</a><a href="{{ '/publications.html' | relative_url }}">Publications</a><a href="{{ '/#experience' | relative_url }}">Experience</a><a href="{{ '/news/' | relative_url }}">News</a><a href="{{ '/#contact' | relative_url }}">Contact</a>
+    </nav>
+    <nav class="foot-col" aria-label="Profiles"><h2>Profiles</h2>
+      {% for l in site.links %}<a href="{{ l.url }}" target="_blank" rel="noopener me">{{ l.name }}</a>{% endfor %}
+    </nav>
+  </div>
+  <div class="in foot-bottom"><span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span><span>San Sebastián · Rio de Janeiro</span></div>
+  <div class="foot-scene" aria-hidden="true"><canvas id="rio"></canvas><span class="scene-cap">Rio de Janeiro · Corcovado &amp; Sugarloaf</span></div>
+</footer>
 
 <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/rio.js' | relative_url }}"></script>
 {% for js in page.scripts %}<script src="{{ js | prepend: '/assets/js/' | relative_url }}"></script>
 {% endfor %}
 </body>
