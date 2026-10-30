@@ -74,11 +74,9 @@
     </nav>
   </div>
   <div class="in foot-bottom"><span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span><span>San Sebastián · Rio de Janeiro</span></div>
-  <div class="foot-scene" aria-hidden="true"><canvas id="rio"></canvas><span class="scene-cap">Rio de Janeiro · Corcovado &amp; Sugarloaf</span></div>
 </footer>
 
 <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/rio.js' | relative_url }}"></script>
 {% for js in page.scripts %}<script src="{{ js | prepend: '/assets/js/' | relative_url }}"></script>
 {% endfor %}
 </body>

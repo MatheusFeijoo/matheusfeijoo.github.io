@@ -83,8 +83,8 @@ section.s{padding-block:clamp(64px,8vw,104px);border-bottom:1px solid var(--line
 .more{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
 .more:hover{color:var(--accent)}
 
-/* footer: links on a night band that turns into the Rio scene */
-.site-foot{margin-top:40px;border-top:1px solid var(--line);background:linear-gradient(to bottom,transparent,#0d1426 70%)}
+/* footer: about, site links and profiles */
+.site-foot{margin-top:40px;border-top:1px solid var(--line);background:linear-gradient(to bottom,transparent,var(--surface))}
 .foot-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(2,minmax(0,1fr));gap:32px;padding-block:56px 36px}
 .foot-brand b{font-size:20px;font-weight:600;letter-spacing:-.02em}
 .foot-brand p{margin:10px 0 14px;color:var(--muted);max-width:46ch;font-size:15px}
@@ -94,9 +94,6 @@ section.s{padding-block:clamp(64px,8vw,104px);border-bottom:1px solid var(--line
 .foot-col a{color:var(--muted)}
 .foot-col a:hover,.foot-mail:hover{color:var(--accent)}
 .foot-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--faint);padding-block:18px;border-top:1px solid var(--line)}
-.foot-scene{position:relative;height:clamp(220px,28vw,360px);background:#0d1426}
-.foot-scene canvas{display:block;width:100%;height:100%}
-.scene-cap{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:12px;font-family:var(--mono);font-size:11px;color:rgba(226,246,241,.45)}
 @media (max-width:720px){.foot-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.foot-brand{grid-column:1/-1}}
 
 /* tuner (draft only) */
