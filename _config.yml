@@ -34,10 +34,9 @@ links:
     url: https://www.researchgate.net/profile/Matheus-Pedra-Puime-Feijoo
 
 # News posts live in _posts/ as YYYY-MM-DD-short-title.md
-permalink: /news/:year/:title/
 defaults:
   - scope: { path: "", type: posts }
-    values: { layout: post, styles: [post.css] }
+    values: { layout: post, styles: [post.css], permalink: "/news/:year/:title/" }
 
 plugins:
   - jekyll-sitemap
