@@ -1,0 +1,82 @@
+# Research topics shown in the homepage timeline, top to bottom.
+#   start / end: years for the bar (end: now for ongoing topics). The axis runs 2018 → now.
+#   current: true keeps the bar highlighted and opens this topic first. Use it on one topic only.
+
+- id: res
+  title: Disaster resilience and economic losses
+  start: 2022
+  end: now
+  label: "● current focus · 2022 → now"
+  years: "2022 → now"
+  current: true
+  text: >-
+    Machine learning models estimate the economic losses of floods and windstorms from open data
+    published by Spanish authorities. The models combine disaster, meteorological and resilience
+    indicators, and explainable AI (SHAP) shows which factors drive the losses. Clustering and
+    data-driven indices compare how transport networks and regions respond to multi-hazard events.
+    Together, this supports cost-benefit analysis for planners and policymakers.
+  where:
+    - name: TECNUN Resilience Group
+      detail: University of Navarra · 2022 → now
+    - name: TU Delft research project
+      detail: Flood losses in Spain · 2025
+    - name: Incremental project
+      detail: Smart Mature Resilience · 2022 → 2024
+  tags: [machine learning, explainable AI, clustering, floods, multi-hazard]
+
+- id: applied
+  title: Applied data science
+  start: 2018
+  end: now
+  label: "ongoing · 2018 → now"
+  years: "2018 → now · ongoing"
+  text: >-
+    Data science applied to new problems, from the first projects to today. Current work uses large
+    language models to extract structured data from news, turning headlines into disaster-event
+    databases (International Journal of Data Science and Analytics, 2025), and builds data collection,
+    NLP and visualization pipelines for disaster management projects. Earlier projects include
+    FISHTRACKER, a video tracking system for animal behaviour (C++ and OpenCV); GíriasIO, slang
+    detection that helps people from different groups understand each other; and portfolio selection
+    with data envelopment analysis.
+  where:
+    - name: TECNUN Resilience Group
+      detail: Data extraction from news with LLMs · 2025
+    - name: Oswaldo Cruz Institute (Fiocruz)
+      detail: FISHTRACKER · 2018
+    - name: UFRRJ and UFRJ
+      detail: Rio de Janeiro · 2018 → 2021
+  tags: [LLMs, data extraction, NLP, computer vision, data visualization, optimization]
+
+- id: fair
+  title: FAIR data, provenance and nanopublications
+  start: 2018
+  end: 2023
+  label: "2018 → 2023"
+  years: "2018 → 2023 · Master's research"
+  text: >-
+    Workflows that convert research datasets into nanopublications: small, machine-readable
+    statements that carry their own provenance and semantic annotations. Genomics was the main use
+    case. The work also covered evaluating how FAIR existing genomic databases are, and the FAIR
+    Knowlet schema.
+  where:
+    - name: GRECO · Knowledge Engineering Group
+      detail: UFRJ, Rio de Janeiro · 2018 → now
+  tags: [FAIR principles, semantic web, provenance, nanopublications, genomics]
+
+- id: health
+  title: Health and open research data
+  start: 2020
+  end: 2022
+  label: "2020 → 2022"
+  years: "2020 → 2022 · COVID-19 response"
+  text: >-
+    A federated infrastructure that follows the FAIR principles lets Brazilian health units collect
+    and manage data on COVID-19 patients. It includes a data collection application, a staging
+    database and FAIR Data Points. Later work covered open research data platforms (Dataverse and
+    CKAN) for the Brazilian higher education census.
+  where:
+    - name: VODAN-BR · Virus Outbreak Data Network
+      detail: 2020 → 2022
+    - name: RNP · Research Data Network
+      detail: Working group with INEP · 2022
+  tags: [health data, FAIR Data Points, data privacy, Dataverse, CKAN]

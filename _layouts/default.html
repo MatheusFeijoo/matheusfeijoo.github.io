@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="{{ site.lang }}" data-theme="dark" data-accent="teal" data-photo="card">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{% if page.title %}{% assign page_title = page.title | append: " · " | append: site.title %}{% else %}{% assign page_title = site.title | append: " · " | append: site.tagline %}{% endif %}
+{% assign page_desc = page.description | default: site.description | strip_newlines | strip %}
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_desc | escape }}">
+<meta name="author" content="{{ site.author.name }}">
+<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}profile{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_desc | escape }}">
+<meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+<meta property="og:image" content="{{ site.author.image | absolute_url }}">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page_title | escape }}">
+<meta name="twitter:description" content="{{ page_desc | escape }}">
+<meta name="twitter:image" content="{{ site.author.image | absolute_url }}">
+<meta name="theme-color" content="#0b0b10">
+<link rel="icon" href="{{ '/images/avatar.jpg' | relative_url }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.author.name | jsonify }},
+  "alternateName": {{ site.author.other_names | jsonify }},
+  "jobTitle": {{ site.author.job | jsonify }},
+  "url": {{ site.url | append: '/' | jsonify }},
+  "image": {{ site.author.image | absolute_url | jsonify }},
+  "email": {{ site.author.email | prepend: 'mailto:' | jsonify }},
+  "worksFor": {"@type": "CollegeOrUniversity", "name": {{ site.author.employer | jsonify }}, "address": {"@type": "PostalAddress", "addressLocality": {{ site.author.city | jsonify }}, "addressCountry": {{ site.author.country | jsonify }}}},
+  "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Federal University of Rio de Janeiro (UFRJ)"}, {"@type": "CollegeOrUniversity", "name": "Federal Rural University of Rio de Janeiro (UFRRJ)"}],
+  "knowsAbout": ["Data science", "Machine learning", "Explainable AI", "Disaster resilience", "Flood economic losses", "FAIR data", "Nanopublications", "Large language models"],
+  "sameAs": {{ site.links | map: 'url' | jsonify }}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700;900&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+{% for css in page.styles %}<link rel="stylesheet" href="{{ css | prepend: '/assets/css/' | relative_url }}">
+{% endfor %}
+</head>
+<body>
+
+<header class="top">
+  <div class="in">
+    <a class="wm" href="{{ '/' | relative_url }}"><b>{{ site.title }}</b></a>
+    <nav class="links" aria-label="Sections">
+      <a href="{{ '/#research' | relative_url }}">Research</a><a href="{{ '/publications.html' | relative_url }}"{% if page.url == '/publications.html' %} aria-current="page"{% endif %}>Publications</a><a href="{{ '/#experience' | relative_url }}">Experience</a><a href="{{ '/#writing' | relative_url }}">News</a>
+    </nav>
+    <a class="cta" href="{{ '/#contact' | relative_url }}">Get in touch ↗</a>
+  </div>
+</header>
+
+{{ content }}
+
+<footer><div class="in"><span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span><span>San Sebastián · Rio de Janeiro</span></div></footer>
+
+<script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+{% for js in page.scripts %}<script src="{{ js | prepend: '/assets/js/' | relative_url }}"></script>
+{% endfor %}
+</body>
+</html>

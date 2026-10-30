@@ -1,0 +1,51 @@
+---
+layout: default
+title: Publications
+description: All publications by Matheus Puime Pedra (also published as Matheus Pedra Puime Feijoó) on disaster resilience, flood economic losses, explainable machine learning, LLM data extraction, FAIR data and nanopublications.
+styles: [publications.css]
+scripts: [publications.js]
+redirect_from:
+  - /scipublications.html
+---
+{% assign themes = "resilience:Disaster resilience,fair:FAIR & health data,applied:Applied data science" | split: "," %}
+<main>
+  <section class="in p-hero">
+    <span class="label">Publications</span>
+    <h1>All publications<span class="dot">.</span></h1>
+  </section>
+
+  <section class="in">
+    <div class="filters">
+      <div class="chips" id="f-theme" role="group" aria-label="Filter by line of work">
+        <button type="button" class="chip" data-v="all" aria-pressed="true">All work</button>
+        {% for t in themes %}{% assign kv = t | split: ":" %}<button type="button" class="chip" data-v="{{ kv[0] }}" aria-pressed="false"><i class="sw t-{{ kv[0] }}"></i>{{ kv[1] }}</button>
+        {% endfor %}
+      </div>
+      <div class="chips" id="f-type" role="group" aria-label="Filter by type">
+        <button type="button" class="chip" data-v="all" aria-pressed="true">All types</button>
+        <button type="button" class="chip" data-v="journal" aria-pressed="false">Journal &amp; chapter</button>
+        <button type="button" class="chip" data-v="conference" aria-pressed="false">Conference</button>
+        <button type="button" class="chip" data-v="poster" aria-pressed="false">Poster</button>
+      </div>
+      <label class="search" for="q"><span aria-hidden="true" style="color:var(--faint)">⌕</span><input id="q" type="search" placeholder="Search titles, venues, co-authors"></label>
+    </div>
+    <div class="status" id="status" aria-live="polite"></div>
+
+    {% assign by_year = site.data.publications | group_by: "year" %}
+    {% for g in by_year %}
+    <section class="yeargroup"><h2>{{ g.name }}</h2><div>
+      {% for p in g.items %}
+      {% if p.type == "chapter" or p.type == "journal" %}{% assign grp = "journal" %}{% else %}{% assign grp = p.type %}{% endif %}
+      {% case p.type %}{% when "journal" %}{% assign tl = "Journal" %}{% when "chapter" %}{% assign tl = "Book chapter" %}{% when "poster" %}{% assign tl = "Poster" %}{% else %}{% assign tl = "Conference" %}{% endcase %}
+      <article class="entry" data-theme="{{ p.theme }}" data-group="{{ grp }}">
+        <div class="tl"><i class="sw t-{{ p.theme }}"></i><h3>{{ p.title }}</h3></div>
+        {% if p.translation %}<div class="tr">{{ p.translation }}</div>{% endif %}
+        <div class="au">{{ p.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>
+        <div class="row"><span>{{ p.venue }}</span><span class="badge">{{ tl }}</span>{% if p.link %}<a href="{{ p.link }}" target="_blank" rel="noopener">paper ↗</a>{% endif %}{% if p.supplementary %}<a href="{{ p.supplementary | relative_url }}" target="_blank" rel="noopener">supplementary ↗</a>{% endif %}</div>
+      </article>
+      {% endfor %}
+    </div></section>
+    {% endfor %}
+    <p class="empty" id="empty" hidden>No papers match these filters. Clear the search or pick "All work".</p>
+  </section>
+</main>

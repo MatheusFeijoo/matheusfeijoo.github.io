@@ -1,0 +1,38 @@
+/* Publications page: filters and search, then the full list grouped by year, newest first. */
+.p-hero{padding-block:clamp(48px,7vw,88px) 28px}
+.p-hero h1{margin:8px 0 14px;font-size:clamp(40px,6.4vw,88px);font-weight:900;letter-spacing:-.05em;line-height:.95}
+.p-hero h1 .dot{color:var(--accent)}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding-block:24px 8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:7px;font:inherit;font-size:13px;color:var(--muted);background:none;border:1px solid var(--line-strong);border-radius:999px;padding:5px 12px;cursor:pointer}
+.chip:hover{color:var(--text)}
+.chip[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.search{flex:1 1 220px;display:flex;align-items:center;gap:8px;border:1px solid var(--line-strong);border-radius:999px;padding:5px 14px;min-width:0}
+.search input{flex:1;min-width:0;background:none;border:0;color:var(--text);font:inherit;font-size:14px;outline:none}
+.search:focus-within{border-color:var(--accent)}
+.status{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-bottom:8px}
+
+/* list */
+.yeargroup{display:grid;grid-template-columns:110px minmax(0,1fr);gap:24px;border-top:1px solid var(--line);padding-block:8px}
+.yeargroup h2{margin:0;padding-top:18px;font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-.04em;color:var(--faint);align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 72px)}
+.entry{padding:18px 12px;margin-inline:-12px;border-radius:8px;display:grid;gap:6px;transition:background .25s}
+.entry + .entry{border-top:1px solid var(--line);border-radius:0}
+.entry.flash{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.entry .tl{display:flex;gap:10px;align-items:baseline}
+.entry .tl .sw{transform:translateY(-2px)}
+.entry h3{margin:0;font-size:18px;font-weight:500;letter-spacing:-.015em;line-height:1.35}
+.entry[hidden],.yeargroup[hidden]{display:none}
+.entry .tr{color:var(--muted);font-size:14px;font-style:italic;padding-left:18px}
+.entry .au{color:var(--muted);font-size:14px;padding-left:18px}
+.entry .au b,.entry .au strong{color:var(--text);font-weight:500}
+.entry .row{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding-left:18px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.badge{color:var(--text);border:1px solid var(--line-strong);border-radius:999px;padding:1px 9px}
+.entry .row a{color:var(--accent)}
+.entry .row a:hover{text-decoration:underline}
+.empty{padding:40px 0;color:var(--muted)}
+@media (max-width:640px){
+  .yeargroup{grid-template-columns:minmax(0,1fr);gap:0}
+  .yeargroup h2{position:static;padding-top:14px}
+}

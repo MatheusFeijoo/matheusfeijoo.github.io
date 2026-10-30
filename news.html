@@ -1,0 +1,19 @@
+---
+layout: default
+title: News
+permalink: /news/
+description: News from Matheus Puime Pedra's research on disaster resilience, flood economic losses, machine learning and FAIR data.
+styles: [post.css]
+---
+<main class="in post-page">
+  <span class="label">News</span>
+  <h1>All news</h1>
+  <ul class="news-list">
+    {% for post in site.posts %}
+    <li><a href="{{ post.url | relative_url }}">
+      <span class="when"><span class="tag">{{ post.tag | default: 'News' }}</span><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%-d %b %Y' }}</time></span>
+      <span><h2>{{ post.title }}</h2><p>{{ post.content | strip_html | truncatewords: 40 }}</p></span>
+    </a></li>
+    {% endfor %}
+  </ul>
+</main>

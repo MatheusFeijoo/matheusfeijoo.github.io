@@ -1,196 +1,143 @@
-<!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Matheus Puime Pedra</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel='shortcut icon' type='image/x-icon' href='images/man.png'/>
-	</head>
-	<body class="is-preload">
+---
+layout: default
+styles: [home.css]
+scripts: [home.js, land-dots.js, globe.js, game.js]
+redirect_from:
+  - /projects.html
+  - /blog.html
+---
+<main id="top">
+  <section class="hero" aria-label="Introduction">
+    <div class="field" aria-hidden="true"><canvas id="field"></canvas></div>
+    <div class="in">
+      <span class="eyebrow"><span class="pulse"></span>Professor at TECNUN · University of Navarra</span>
+      <h1 class="name">Matheus<br>Puime Pedra<span class="dot">.</span></h1>
+      <div class="role"><span id="rot" class="rot">Professor</span><span style="color:var(--faint)">/</span><span class="kw">data science · machine learning · disaster resilience · FAIR data</span></div>
+      <div class="intro">
+        <img class="ph ph-card" src="{{ '/images/avatar.jpg' | relative_url }}" alt="Photo of Matheus Puime Pedra" width="88" height="88">
+        <p class="lede">Data scientist and professor using <b>data science and machine learning</b> to understand how societies withstand and recover from shocks. Today that means <b>estimating the economic losses of floods and windstorms</b>. Earlier, it meant <b>making scientific and COVID-19 data findable and reusable</b>.</p>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="#research">Explore the research →</a>
+        <a class="btn" href="{{ '/publications.html' | relative_url }}">All publications</a>
+        <a class="btn" href="https://portalcientifico.unav.edu/investigadores/1111931/detalle" target="_blank" rel="noopener">UNAV profile ↗</a>
+      </div>
+      <div class="meta">
+        <div><span class="label">Based in</span><strong>San Sebastián, ES</strong></div>
+        <div><span class="label">Now</span><strong>Professor · TECNUN</strong></div>
+        <div><span class="label">Group</span><strong>Resilience Group</strong></div>
+        <div><span class="label">Focus</span><strong>Data science · Resilience</strong></div>
+      </div>
+    </div>
+  </section>
 
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-					<h4 id="logo">Hi, I'm Matheus Puime Pedra</h4>
-					Data Scientist
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#one" class="active">About</a></li>
-						<li><a href="#two">Scientific Publications</a></li>
-						<li><a href="#three">Working Experience</a></li>
-						<li><a href="#four">Blog</a></li>
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/feijo%C3%B3/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="https://twitter.com/fdefeijoo" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://github.com/MatheusFeijoo" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://orcid.org/0000-0001-9582-4595" class="icon fa fa-id-badge"><span class="label">Orcid</span></a></li>
-						<li><a href="https://www.researchgate.net/profile/Matheus-Pedra-Puime-Feijoo" class="icon solid fa-user-graduate"><span class="label">ResearchGate</span></a></li>
-						<li><a href="mailto: feijoo@ufrj.br >" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-			</section>
+  <section class="s" id="research">
+    <div class="in">
+      <div class="s-head">
+        <div><span class="label">Research</span><h2>Research topics</h2></div>
+        <p>Main topics investigated, past and present. One thread runs through all of them: data science that helps people make better decisions.</p>
+      </div>
+      <div class="rt">
+        <div class="rt-tl" role="tablist" aria-label="Research topics over time" aria-orientation="vertical">
+          <div class="rt-axis" aria-hidden="true"><span>2018</span><span>2019</span><span>2020</span><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>now</span></div>
+          {% for r in site.data.research %}
+          {% assign c1 = r.start | minus: 2017 %}{% if r.end == 'now' %}{% assign c2 = 10 %}{% else %}{% assign c2 = r.end | minus: 2016 %}{% endif %}
+          <button class="rt-row{% if r.current %} current{% endif %}" role="tab" id="bar-{{ r.id }}" aria-controls="era-{{ r.id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
+            <span class="rt-name"><b>{{ r.title }}</b><small>{{ r.label }}</small></span>
+            <span class="rt-track"><i style="grid-column:{{ c1 }}/{{ c2 }}"></i></span>
+          </button>
+          {% endfor %}
+        </div>
+        <div class="eras">
+          {% for r in site.data.research %}
+          <article class="era{% unless forloop.first %} off{% endunless %}" role="tabpanel" id="era-{{ r.id }}" aria-labelledby="bar-{{ r.id }}">
+            <span class="yrs">{% if r.current %}<b>● current focus</b> {% endif %}{{ r.years }}</span>
+            <h3>{{ r.title }}</h3>
+            <p>{{ r.text }}</p>
+            <h4>Where</h4>
+            <ul>{% for w in r.where %}<li>{{ w.name }}<span>{{ w.detail }}</span></li>{% endfor %}</ul>
+            <div class="tags">{% for t in r.tags %}<span>{{ t }}</span>{% endfor %}</div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <section class="s" id="publications">
+    <div class="in">
+      <div class="s-head">
+        <div><span class="label">Publications</span><h2>Selected papers</h2></div>
+        <a class="more" href="{{ '/publications.html' | relative_url }}">all publications →</a>
+      </div>
+      <div class="pubs">
+        {% assign featured = site.data.publications | where: 'featured', true %}
+        {% for p in featured %}
+        <a class="pub" href="{{ p.link }}" target="_blank" rel="noopener"><span class="y"><span class="sw t-{{ p.theme }}"></span>{{ p.year }}</span><span class="t">{{ p.title }}<small>{{ p.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</small></span><span class="v">{{ p.venue }}</span><span class="ar">↗</span></a>
+        {% endfor %}
+      </div>
+      <div class="pubs-foot"><a class="btn" href="{{ '/publications.html' | relative_url }}">See all publications →</a></div>
+    </div>
+  </section>
 
-				<!-- Main -->
-					<div id="main">
+  <section class="s" id="experience">
+    <div class="in">
+      <div class="s-head"><div><span class="label">Experience</span><h2>Experience</h2></div></div>
+      <div class="xp">
+        <ul class="xp-list">
+          {% for x in site.data.experience %}
+          <li class="xp-item" data-place="{{ x.place }}" tabindex="0"><span class="when{% if x.live %} live{% endif %}">{{ x.when }}</span><div><b>{{ x.title }}</b><span>{{ x.text }}</span></div><span class="where">{{ x.where }}</span></li>
+          {% endfor %}
+        </ul>
+        <figure class="globe-card">
+          <canvas id="globe" aria-label="Globe with pins on Seropédica, Rio de Janeiro, San Sebastián and Delft" role="img"></canvas>
+          <figcaption><span>Drag to turn. Hover an item to find it.</span><span class="places"><button type="button" class="place-btn" data-place="seropedica">Seropédica</button><button type="button" class="place-btn" data-place="rio">Rio</button><button type="button" class="place-btn" data-place="sansebastian">San Sebastián</button><button type="button" class="place-btn" data-place="delft">Delft</button></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-						<!-- One -->
-							<section id="one">
-								<div class="image main" data-position="center">
-									<img src="images/banner.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>About</h2>
-									</header>
-									Graduated in Information Systems from the Federal Rural University of Rio de Janeiro in 2018, holds a Master's degree
-									in Computer Science from the Federal University of Rio de Janeiro, obtained in 2022.
-									Currently, a Ph.D. student, conducting a research funded by the AON Foundation focused on assessing the economic losses 
-									caused by natural disasters on resilience, utilizing artificial intelligence. He is a member of the TECNUN Resilience Group and the World
-									Alliance on Digitalization for Disaster & Emergency Management (WADDEM). He has also worked as a researcher with
-									the Knowledge Engineering Group (GRECO) and the Virus Outbreak Data Network Brazil (VODAN-BR). His research
-									interests include data science, machine learning, FAIR principles, resilience, disaster losses and climate change.
-								</div>
-							</section>
+  <section class="s" id="writing">
+    <div class="in">
+      <div class="s-head">
+        <div><span class="label">News &amp; writing</span><h2>Latest news</h2></div>
+        <a class="more" href="{{ '/news/' | relative_url }}">all news →</a>
+      </div>
+      <div class="posts">
+        {% for post in site.posts limit:3 %}
+        <article class="post"><div class="meta-col"><span class="tag">{{ post.tag | default: 'News' }}</span><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%-d %b %Y' }}</time></div>
+          <div><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3><p>{{ post.content | strip_html | strip }}</p>{% if post.link %}<a class="go" href="{{ post.link }}" target="_blank" rel="noopener">{{ post.link_label | default: 'read more' }} ↗</a>{% endif %}</div></article>
+        {% endfor %}
+      </div>
+      <h4 class="sub-h">Articles &amp; talks</h4>
+      <div class="writes">
+        {% for w in site.data.writing %}
+        <a class="w" href="{{ w.url }}" target="_blank" rel="noopener"><span class="k"><span>{{ w.source }}</span><span>{{ w.length }}</span></span><h3>{{ w.title }}</h3><span class="go">{{ w.action }} ↗</span></a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 
-						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<h2>Publications</h2>
-									<ul class="feature-icons">
-										<li >
-											<b>Matheus Puime Pedra</b>, Josune Hernantes & Leire Labaka. (2025)
-											<b> Machine Learning and the Economic Losses in Disasters: Progress and Future Trends </b>
-											<i> Journal of Safety Science and Resilience </i>
-											<a href="https://doi.org/10.1016/j.jnlssr.2025.100276"><b>Access paper here</b></a>
-										</li>
-
-										<!-- 2025 1 -->
-										<li >
-											<b>Matheus Puime Pedra</b>, Josune Hernantes & Leire Labaka. (2025)
-											<b> Data-driven disaster resilience assessment: a case study in the Spanish transportation system. </b>
-											<i> Information Technology for Development </i>
-											<a href="https://doi.org/10.1080/02681102.2025.2502418"><b>Access paper here</b></a>
-										</li>
-										
-										<li >
-											<b>Matheus Puime Pedra</b>, Josune Hernantes & Leire Labaka. (2024)
-											<b>Clustering-Based Framework for Assessing Transportation Resilience to Flood Events.</b>
-											<i>Neural Information Processing Systems (NeurIPS 2024).</i>
-											<a href="https://www.climatechange.ai/papers/neurips2024/56"><b>Access paper here</b></a>
-										</li>
-									</ul>
-									<ul class="actions">
-										<li><a href="scipublications.html" class="button">See More</a></li>
-									</ul>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="three">
-								<div class="container">
-									<h2>Professional experience</h2>
-									<div class="features">
-										<article>
-											<a class="image"><img src="images/tecnun.png" alt="" /></a>
-											<div class="inner">
-												<h4>Teaching & Mentorship</h4>
-												<p>Teaching computer programming (MATLAB) to first-year engineering students, mentoring undergraduate thesis 
-													projects in disaster resilience, and supervising internal projects in disaster management, including data 
-													science, data collection, natural language processing, and data visualization following FAIR data principles.</p>
-											</div>
-										</article>
-										<article>
-											<a class="image"><img src="images/tecnun.png" alt="" /></a>
-											<div class="inner">
-												<h4>Resilience Group</h4>
-												<p>Development of a ML framework to estimate flood economic losses by integrating resilience
-												    indicators and XAI techniques. The approach identifies drivers of impact, evaluates the effectiveness 
-													of measures, and supports informed decision-making.</p>
-											</div>
-										</article>
-										<article>
-											<a class="image"><img src="images/greco.png" alt="" /></a>
-											<div class="inner">
-												<h4>GRECO</h4>
-												<p>Research for possible solutions to enhance semantic interoperability and data provenance in scientific repositories, 
-													taking the genomic area as a use case. This investigation bases on FAIR data principles, nanopublication and FAIR 
-													Knowlet schema.</p>
-											</div>
-										</article>
-										<ul class="actions">
-											<li><a href="projects.html" class="button">See More</a></li>
-										</ul>
-									</div>
-								</div>
-							</section>
-
-						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h2>Blog</h2>
-									<div class="features">
-										<article>
-											<a href="https://medium.com/codex/analysing-forest-fires-data-in-the-worlds-largest-wetlands-b5cc9049e28b" class="image"><img src="https://miro.medium.com/max/1400/0*2cS5N5ktZLO2Ihgb" alt="" /></a>
-											<a href="https://medium.com/codex/analysing-forest-fires-data-in-the-worlds-largest-wetlands-b5cc9049e28b">
-											<div class="inner">
-												<h4>Analysing forest fires data in the world's largest wetlands</h4>
-												<p>Tragically, forest fires worldwide are a trending topic nowadays. Data analysis can be essential for understanding, sharing, and generating information about these fires. In this article, we perform a data exploration to understand better the fires that occur annually in the Pantanal region. 
-												</br><i>7 min read.</i></p>
-											</div>
-											</a>
-										</article>
-										<article>
-											<a href="https://medium.com/codex/visualising-satellite-data-with-pydeck-and-streamlit-to-discover-possible-forest-fires-worldwide-7cb4f25351ba" class="image"><img src="https://miro.medium.com/max/828/0*-rpNNPoaP0Tng_Vj" alt="" /></a>
-											<a href="https://medium.com/codex/visualising-satellite-data-with-pydeck-and-streamlit-to-discover-possible-forest-fires-worldwide-7cb4f25351ba">
-											<div class="inner">
-												<h4>Visualising satellite data with Pydeck and Streamlit to discover possible forest fires worldwide</h4>
-												<p>Starting from the Projeto Queimadas data, we will develop a simple app with Streamlit to visualise possible fires worldwide captured by satellites based on the Pydeck. 
-												</br><i>5 min read.</i></p>
-											</div>
-											</a>
-										</article>
-										<ul class="actions">
-											<li><a href="blog.html" class="button">See More</a></li>
-										</ul>
-									</div>
-								</div>
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; Matheus Feijoó. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+  <section class="contact" id="contact">
+    <div class="in contact-grid">
+      <div>
+        <span class="label">Contact</span>
+        <h2>Say hi<span class="dot">.</span></h2>
+        <p>For research collaborations, students, talks, or questions about data science, disaster losses or FAIR data.</p>
+        <div class="mail"><span id="email">{{ site.author.email }}</span><button class="copy" id="copy-btn" type="button">copy</button></div>
+        <div class="socials">
+          {% for l in site.links %}<a href="{{ l.url }}" target="_blank" rel="noopener me">{{ l.name }} ↗</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="game">
+        <div class="game-top"><span>// keep the city dry</span><span>caught <b id="game-score">0</b> · best <b id="game-best">0</b></span></div>
+        <div class="game-stage">
+          <canvas id="game" tabindex="0" aria-label="Mini game: move the levee to catch the rain"></canvas>
+          <div class="game-msg" id="game-msg"><h3>Rain is coming.</h3><p>Move the levee to catch the drops. Every drop you miss raises the water.</p><button class="btn primary" id="game-start" type="button">Play</button></div>
+        </div>
+        <div class="game-help">mouse or touch to move · ← → on keyboard</div>
+      </div>
+    </div>
+  </section>
+</main>

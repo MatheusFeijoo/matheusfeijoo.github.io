@@ -1,0 +1,59 @@
+# Experience list next to the globe, newest first.
+#   place: sansebastian | delft | rio | seropedica  (the pin the globe turns to; new places go in assets/js/globe.js)
+#   live: true colours the years as current.
+
+- when: 2024 → now
+  live: true
+  title: Professor · TECNUN
+  text: Programming (MATLAB) for first-year engineers, undergraduate thesis supervision
+  place: sansebastian
+  where: San Sebastián
+
+- when: 2022 → now
+  live: true
+  title: Resilience Group · TECNUN
+  text: ML framework for flood losses with resilience indicators and XAI
+  place: sansebastian
+  where: San Sebastián
+
+- when: "2025"
+  title: TU Delft research project
+  text: Government interventions and flood losses in Spain
+  place: delft
+  where: Delft
+
+- when: 2022 → 2024
+  title: Incremental · Smart Mature Resilience
+  text: Resilience self-assessment dashboard for cities
+  place: sansebastian
+  where: San Sebastián
+
+- when: 2018 → now
+  title: GRECO · Knowledge Engineering Group
+  text: FAIR data, nanopublications, provenance · UFRJ
+  place: rio
+  where: Rio de Janeiro
+
+- when: 2020 → 2022
+  title: VODAN-BR
+  text: FAIR infrastructure for COVID-19 patient data
+  place: rio
+  where: Rio de Janeiro
+
+- when: "2022"
+  title: RNP · Research Data Network
+  text: Dataverse and CKAN for INEP's higher education census
+  place: rio
+  where: Rio de Janeiro
+
+- when: 2019 → 2022
+  title: Instructor & teaching assistant · UFRJ
+  text: Data visualization, Linked Data, SPARQL, bioinformatics
+  place: rio
+  where: Rio de Janeiro
+
+- when: until 2018
+  title: PET-SI · Tutorial Education Program
+  text: "Information Systems at UFRRJ: an agile software factory and IT projects with social impact"
+  place: seropedica
+  where: Seropédica

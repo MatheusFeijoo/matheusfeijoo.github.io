@@ -1,0 +1,188 @@
+# Publications, newest first.
+# To add a paper: copy one block, paste it at the top and edit it.
+#   theme: resilience | fair | applied     type: journal | chapter | conference | poster
+#   featured: true shows it in "Selected papers" on the homepage.
+#   Wrap your own name in ** ** in authors to make it bold.
+
+- year: 2026
+  theme: resilience
+  type: journal
+  featured: true
+  title: "Assessing flood economic loss magnitude through explainable machine learning: Evidence from Spain"
+  authors: "**Matheus Puime Pedra**, Josune Hernantes & Leire Labaka"
+  venue: International Journal of Disaster Risk Reduction
+  link: "https://doi.org/10.1016/j.ijdrr.2026.106518"
+
+- year: 2026
+  theme: resilience
+  type: journal
+  featured: true
+  title: "Towards resilient cities: development of a city resilience assessment tool"
+  authors: "Leire Labaka, **Matheus Puime Pedra**, Victor A. Bañuls, Fernando M. Villar-Rosety, Blanca López-Catalán & Josune Hernantes"
+  venue: City and Environment Interactions
+  link: "https://doi.org/10.1016/j.cacint.2026.100397"
+
+- year: 2026
+  theme: resilience
+  type: conference
+  title: "Flood Impact Assessment through Machine Learning: Effectiveness of Government Interventions on Economic Loss Reduction in Spain"
+  authors: "**Matheus Puime Pedra**, Nazli Aydin, Omar Kammouh, Josune Hernantes & Leire Labaka"
+  venue: International Conference on Resilient Systems (ICRS 2026), Delft
+  link: "https://research.tue.nl/files/391703968/ICRS-2026-Book_of_Abstracts-260527.pdf#page=259"
+
+- year: 2026
+  theme: resilience
+  type: journal
+  featured: true
+  title: "Machine Learning and the Economic Losses in Disasters: Progress and Future Trends"
+  authors: "**Matheus Puime Pedra**, Josune Hernantes & Leire Labaka"
+  venue: Journal of Safety Science and Resilience
+  link: "https://doi.org/10.1016/j.jnlssr.2025.100276"
+
+- year: 2025
+  theme: applied
+  type: journal
+  featured: true
+  title: "From headlines to databases: leveraging LLMs for structured disaster event extraction"
+  authors: "**Matheus Puime Pedra**, Sahar Elkady, Fernando M. Villar-Rosety, Alberto Colmenero, Leire Labaka & Josune Hernantes"
+  venue: International Journal of Data Science and Analytics
+  link: "https://doi.org/10.1007/s41060-025-01017-1"
+
+- year: 2025
+  theme: resilience
+  type: conference
+  title: "A machine learning approach for flood impact assessment: Evaluating governmental interventions and associated economic losses in Spain"
+  authors: "**Matheus Puime Pedra**, Josune Hernantes & Leire Labaka"
+  venue: iCARE · International Climate Resilience Conference
+  supplementary: supplementary_materials.pdf
+
+- year: 2025
+  theme: resilience
+  type: journal
+  featured: true
+  title: "Data-driven disaster resilience assessment: a case study in the Spanish transportation system"
+  authors: "**Matheus Puime Pedra**, Josune Hernantes & Leire Labaka"
+  venue: Information Technology for Development
+  link: "https://doi.org/10.1080/02681102.2025.2502418"
+
+- year: 2024
+  theme: resilience
+  type: conference
+  title: Clustering-Based Framework for Assessing Transportation Resilience to Flood Events
+  authors: "**Matheus Puime Pedra**, Josune Hernantes & Leire Labaka"
+  venue: NeurIPS 2024 · Climate Change AI
+  link: "https://www.climatechange.ai/papers/neurips2024/56"
+
+- year: 2024
+  theme: resilience
+  type: conference
+  title: "Windstorm Economic Impacts on the Spanish Resilience: A Machine Learning Real-Data Approach"
+  authors: "**Matheus Puime Pedra**, Josune Hernantes, Leire Baena & Leire Labaka"
+  venue: CAEPIA 2024 · II Workshop on Smart Cities and Artificial Intelligence
+
+- year: 2024
+  theme: resilience
+  type: chapter
+  title: "Assessing the Impact of Multi-hazard Events in Spain: A Clustering Index Framework"
+  authors: "**Matheus Puime Pedra**, Josune Hernantes & Leire Labaka"
+  venue: Dynamics of Disasters (Springer)
+  link: "https://link.springer.com/chapter/10.1007/978-3-031-74006-0_10"
+
+- year: 2023
+  theme: fair
+  type: journal
+  title: "Nano-PROV: FAIRification workflow for generating nanopublications based on provenance and semantic enrichment"
+  authors: "**Matheus Pedra Puime Feijoó**, Rodrigo Jardim, Sergio Manuel Serra da Cruz & Maria Luiza Machado Campos"
+  venue: International Journal of Metadata, Semantics and Ontologies
+  link: "https://doi.org/10.1504/IJMSO.2023.135333"
+
+- year: 2022
+  theme: fair
+  type: conference
+  title: "GAP: Enhancing Semantic Interoperability of Genomic Datasets and Provenance Through Nanopublications"
+  authors: "**Matheus Pedra Puime Feijoó**, Rodrigo Jardim, Sergio Manuel Serra da Cruz & Maria Luiza Machado Campos"
+  venue: Metadata and Semantic Research (MTSR)
+  link: "https://link.springer.com/chapter/10.1007/978-3-030-98876-0_29"
+
+- year: 2021
+  theme: applied
+  type: conference
+  title: A Proposal for selecting efficient portfolios using data envelopment analysis (DEA)
+  authors: "Cristiano Fuschilo, **Matheus Pedra Puime Feijoó**, Sildenir Ribeiro & Eber Assis Schimtz"
+  venue: 18th CONTECSI
+
+- year: 2021
+  theme: fair
+  type: conference
+  title: Improving the Traceability of (Meta)data Through Semantically Enriched Nanopublications
+  authors: "**Matheus Pedra Puime Feijoó**, Rodrigo Jardim, Sergio Manuel Serra da Cruz & Maria Luiza Machado Campos"
+  venue: T7 Workshop of Provenance Week
+
+- year: 2020
+  theme: fair
+  type: conference
+  title: "Rede VODAN BR de dados de pesquisa em COVID-19: transformação de dados e metadados para FAIR Data Points"
+  translation: "VODAN BR COVID-19 research data network: data and metadata transformation for FAIR Data Points"
+  authors: "Santos, A. C. R.; Nunes, D. R. C.; **Feijoo, P. P. F.**; Borges, V. J. A. S.; Lopes, G. R.; Campos, M. L. M."
+  venue: XLII Jornada Giulio Massarani de Iniciação Científica
+  link: "https://doi.org/10.5281/zenodo.4679772"
+
+- year: 2020
+  theme: fair
+  type: conference
+  title: Framework para integração e tradução de dados biológicos do Genbank em nanopublicações
+  translation: Genbank biological data integration and transformation nanopublication framework
+  authors: "Hisse, J. V. C.; Franco, D. G.; Queiroz, A. C. S.; **Feijoo, M. P. P.**"
+  venue: XLII Jornada Giulio Massarani de Iniciação Científica
+
+- year: 2020
+  theme: fair
+  type: poster
+  title: "VODAN BRAZIL: The Brazilian experience at the Virus Outbreak Data Network"
+  authors: "Campos, M. L. M.; Veiga, V. S. O.; Moreira, J. L. R.; Henning, P. C.; Santos, L. O. B. S.; Cruz, S. M. S.; **Feijoo, M. P. P.**; Borges, V. J. A. S."
+  venue: RDA 16th Plenary Meeting
+  link: "https://doi.org/10.5281/zenodo.4291112"
+
+- year: 2020
+  theme: fair
+  type: conference
+  title: "VODAN BR: A Federated Architecture for Clinical Data"
+  authors: "**Feijoo, M. P. P.**; Borges, V. J. A. S.; Campos, M. L. M.; Veiga, V. S. O.; Moreira, J. L. R."
+  venue: International FAIR Convergence Symposium
+  link: "https://doi.org/10.5281/zenodo.4679002"
+
+- year: 2020
+  theme: fair
+  type: conference
+  title: Evaluating FAIRness of Genomic Databases
+  authors: "**Matheus Pedra Puime Feijoó**, Rodrigo Jardim, Sergio Manuel Serra da Cruz & Maria Luiza Machado Campos"
+  venue: Advances in Conceptual Modeling · ER Workshops
+  link: "https://doi.org/10.1007/978-3-030-65847-2_12"
+
+- year: 2020
+  theme: applied
+  type: conference
+  title: Análise Comportamental Apoiada em Vídeo Rastreamento
+  translation: Behavioural analysis supported by video tracking
+  authors: "**Feijoo, M. P. P.**; Marroquim, R.; Paiva, A.; Santos, C. P.; Cunha, R.; Jardim, R.; Cruz, S. M. S."
+  venue: Escola Regional de Sistemas de Informação do Rio de Janeiro
+  link: "https://sol.sbc.org.br/index.php/ersi-rj/article/view/10112/9988"
+
+- year: 2019
+  theme: applied
+  type: conference
+  title: "GíriasIO: Aproximando Gerações, Grupos e Dialetos"
+  translation: "SlangsIO: Bridging generations, groups and dialects"
+  authors: "**Matheus Pedra Puime Feijoó**; Rodrigo Oliveira"
+  venue: Simpósio Brasileiro de Sistemas Colaborativos
+  link: "https://sol.sbc.org.br/index.php/sbsc_estendido/article/view/8366"
+
+- year: 2018
+  theme: applied
+  type: conference
+  title: Correlações entre o processo de Definição do Processo Organizacional do Nível E do MPS.BR e as Características da Transparência de Software
+  translation: Correlation between the organizational definition process of MPS.BR level E and software transparency characteristics
+  authors: "**Feijoo, M. P. P.**; Oliveira, S. S. C.; Sousa, H. P. S."
+  venue: V Escola Regional de Sistemas de Informação do Rio de Janeiro
+  link: "https://doi.org/10.5753/ersirj.2018.4648"
+

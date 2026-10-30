@@ -1,0 +1,48 @@
+title: Matheus Puime Pedra
+tagline: Data Scientist and Professor at TECNUN
+description: >-
+  Matheus Puime Pedra is a data scientist and professor at TECNUN, University of Navarra,
+  researching disaster resilience, the economic losses of floods, machine learning,
+  explainable AI and FAIR data.
+url: https://matheusfeijoo.github.io
+baseurl: ""
+lang: en
+
+author:
+  name: Matheus Puime Pedra
+  other_names: [Matheus Pedra Puime Feijoó, Matheus Feijoó, M. P. P. Feijoo]
+  email: mpuime@unav.es
+  image: /images/avatar.jpg
+  job: Professor
+  employer: TECNUN, University of Navarra
+  city: San Sebastián
+  country: ES
+
+# Profile links: shown under "Say hi." and given to search engines.
+links:
+  - name: ORCID
+    url: https://orcid.org/0000-0001-9582-4595
+  - name: Google Scholar
+    url: https://scholar.google.com/citations?user=NmHEDDYAAAAJ
+  - name: Portal Científico UNAV
+    url: https://portalcientifico.unav.edu/investigadores/1111931/detalle
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/mpuimepedra/
+  - name: GitHub
+    url: https://github.com/MatheusFeijoo
+  - name: ResearchGate
+    url: https://www.researchgate.net/profile/Matheus-Pedra-Puime-Feijoo
+
+# News posts live in _posts/ as YYYY-MM-DD-short-title.md
+permalink: /news/:year/:title/
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post, styles: [post.css] }
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+exclude:
+  - README.md
+  - .vscode
