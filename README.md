@@ -37,12 +37,14 @@ Create a file in `_posts/` named `YYYY-MM-DD-short-title.md`:
 ---
 title: "Headline of the post"
 tag: New paper
+icon: flood          # a file from images/icons/, without .svg
 link: https://doi.org/...
 link_label: read the paper
 ---
 The text of the post.
 ```
 
+Available icons: flood, news-data, fire, satellite, dna, health-data. To add one, put a 48×48 SVG in `images/icons/`.
 The three newest posts appear on the homepage. Every post also gets its own page and is listed at `/news/`.
 
 ### Add a place to the globe
