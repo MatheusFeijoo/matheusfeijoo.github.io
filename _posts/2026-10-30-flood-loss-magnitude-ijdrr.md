@@ -1,7 +1,8 @@
 ---
-title: "How much does a flood cost? New paper in the International Journal of Disaster Risk Reduction"
+title: "New paper: what really drives flood losses in Spain"
 tag: New paper
+icon: flood
 link: https://doi.org/10.1016/j.ijdrr.2026.106518
 link_label: read the paper
 ---
-A machine learning framework that predicts the magnitude of economic losses from floods in Spain, built on 2,867 flood events described by disaster, meteorological and resilience indicators. A Gradient Boosting model performed best, and SHAP explanations show that regional resilience features are about as influential as meteorological ones. It is the first application of explainable AI to flood economic losses in Spain. With Josune Hernantes and Leire Labaka.
+Out now in the International Journal of Disaster Risk Reduction. Matheus put together data on 2,867 floods in Spain, from rainfall to how prepared each region was, and trained a model that estimates how big the economic losses of a flood will be. He then used SHAP to open up the model and see what pushes the losses up. The surprise: how resilient a region is matters about as much as the weather itself. That is good news, because resilience is something cities can actually work on. Written with Josune Hernantes and Leire Labaka.

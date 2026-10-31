@@ -1,7 +1,8 @@
 ---
-title: "New AI tool to detect local disasters from online news, featured by the University of Navarra"
+title: "In the news: turning local headlines into disaster data"
 tag: In the news
+icon: news-data
 link: https://www.unav.edu/noticias/-/contents/31/03/2026/nueva-herramienta-basada-en-ia-para-mejorar-la-prevencion-y-adaptacion-urbana-frente-a-catastrofes-naturales/content/lovPblW1fC70/196690555
-link_label: read the UNAV news (in Spanish)
+link_label: read the UNAV story (in Spanish)
 ---
-The University of Navarra highlighted an artificial intelligence system, developed at the BIOMA Institute and Tecnun, that finds local disasters in online news. Global databases such as EM-DAT mostly record large events and miss thousands of smaller floods, landslides and industrial incidents. The system combines web scraping with large language models to read press articles and extract where and when each event happened and which infrastructure was affected. In a case study of floods in Granada, 21 local news items were enough to identify affected roads, with 76% accuracy in extracting the relevant information. The A-92 road appeared after storm after storm, which points to a systematic weakness that needs prevention measures. The work is published as "From headlines to databases: leveraging LLMs for structured disaster event extraction" in the International Journal of Data Science and Analytics, with Sahar Elkady, Fernando M. Villar-Rosety, Alberto Colmenero, Leire Labaka and Josune Hernantes.
+The University of Navarra wrote about "From headlines to databases", the study Matheus led as first author. Small floods and landslides rarely make it into global disaster databases, but local newspapers report them every day. The tool reads those stories with a large language model and writes down what happened, where, when, and which roads or buildings were hit. Tested on floods in Granada, it got the details right 76% of the time from just 21 news stories, and it showed the A-92 road being cut after storm after storm. With Sahar Elkady, Fernando M. Villar-Rosety, Alberto Colmenero, Leire Labaka and Josune Hernantes.

@@ -83,9 +83,11 @@
     ctx.strokeStyle=mut;ctx.setLineDash([2,4]);ctx.globalAlpha=.6;ctx.beginPath();ctx.moveTo(0,floodLine());ctx.lineTo(W,floodLine());ctx.stroke();ctx.setLineDash([]);ctx.globalAlpha=1;
   }
 
-  function aim(e){var r=cv.getBoundingClientRect();paddle.x=e.clientX-r.left;if(!running)draw();}
-  cv.addEventListener('pointermove',aim);
+  /* while playing, the levee follows the pointer anywhere on the page, not only over the canvas */
+  function aim(e){if(!W)return;var r=cv.getBoundingClientRect();paddle.x=Math.max(paddle.w/2,Math.min(W-paddle.w/2,e.clientX-r.left));if(!running)draw();}
+  cv.addEventListener('pointermove',function(e){if(!running)aim(e);});
   cv.addEventListener('pointerdown',aim);
+  document.addEventListener('pointermove',function(e){if(running)aim(e);});
   cv.addEventListener('keydown',function(e){if(['ArrowLeft','ArrowRight','a','d'].indexOf(e.key)>=0){keys[e.key]=true;e.preventDefault();}});
   cv.addEventListener('keyup',function(e){keys[e.key]=false;});
   cv.addEventListener('blur',function(){keys={};});

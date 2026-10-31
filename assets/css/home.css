@@ -93,7 +93,7 @@ h1.name .dot{color:var(--accent)}
 /* news posts */
 .posts{display:grid;gap:14px;margin-bottom:44px}
 .post{display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:26px 28px}
-.post .meta-col{display:grid;gap:8px;align-content:start;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.post .meta-col{display:grid;gap:10px;align-content:start;justify-items:start;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
 .post .tag{justify-self:start;color:var(--accent-ink);background:var(--accent);border-radius:999px;padding:1px 10px;font-size:11.5px;font-weight:500}
 .post h3{margin:0 0 10px;font-size:clamp(19px,2vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.25}
 .post p{margin:0 0 14px;color:var(--muted);max-width:72ch}

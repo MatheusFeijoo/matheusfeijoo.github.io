@@ -12,6 +12,7 @@ styles: [post.css]
   <ul class="news-list">
     {% for post in site.posts %}
     <li class="news-item">
+      <span class="n-icon"><img src="{{ post.icon | default: 'news-data' | prepend: '/images/icons/' | append: '.svg' | relative_url }}" alt="" width="48" height="48"></span>
       <span class="when"><span class="tag">{{ post.tag | default: 'News' }}</span><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%-d %b %Y' }}</time></span>
       <div>
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
@@ -26,6 +27,7 @@ styles: [post.css]
   <ul class="news-list">
     {% for w in site.data.writing %}
     <li class="news-item">
+      <span class="n-icon"><img src="{{ w.icon | default: 'news-data' | prepend: '/images/icons/' | append: '.svg' | relative_url }}" alt="" width="48" height="48"></span>
       <span class="when"><span class="tag tag-quiet">{{ w.source }}</span><span>{{ w.length }}</span></span>
       <div><h2><a href="{{ w.url }}" target="_blank" rel="noopener">{{ w.title }}</a></h2><a class="go" href="{{ w.url }}" target="_blank" rel="noopener">{{ w.action }} ↗</a></div>
     </li>

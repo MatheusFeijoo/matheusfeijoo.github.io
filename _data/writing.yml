@@ -1,26 +1,31 @@
 # "Articles & talks" cards in the News section.
 #   action: read | watch
+#   icon: a file name from images/icons/ (without .svg)
 
 - source: Medium
   length: 7 min
   title: Analysing forest fires data in the world's largest wetlands
+  icon: fire
   url: https://medium.com/codex/analysing-forest-fires-data-in-the-worlds-largest-wetlands-b5cc9049e28b
   action: read
 
 - source: Medium
   length: 5 min
   title: Visualising satellite fire data with Pydeck and Streamlit
+  icon: satellite
   url: https://medium.com/codex/visualising-satellite-data-with-pydeck-and-streamlit-to-discover-possible-forest-fires-worldwide-7cb4f25351ba
   action: read
 
 - source: YouTube · PT
   length: 4 min
   title: Bioinformática e os Princípios de Dados FAIR
+  icon: dna
   url: https://www.youtube.com/watch?v=rK-Lb-bArRM
   action: watch
 
 - source: YouTube
   length: 10 min
   title: Data collection and staging database design at VODAN-BR
+  icon: health-data
   url: https://youtu.be/naLoT_Wg9fk
   action: watch

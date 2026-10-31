@@ -83,6 +83,12 @@ section.s{padding-block:clamp(64px,8vw,104px);border-bottom:1px solid var(--line
 .more{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
 .more:hover{color:var(--accent)}
 
+/* news icons: a teal line drawing on a dotted tile */
+.n-icon{display:grid;place-items:center;width:64px;height:64px;border-radius:14px;border:1px solid var(--line-strong);background-color:var(--bg);background-image:radial-gradient(color-mix(in srgb,var(--accent) 22%,transparent) 1px,transparent 1.4px);background-size:8px 8px}
+.n-icon img{width:36px;height:36px;display:block}
+.n-icon.sm{width:48px;height:48px;border-radius:11px}
+.n-icon.sm img{width:28px;height:28px}
+
 /* footer: about, site links and profiles */
 .site-foot{margin-top:40px;border-top:1px solid var(--line);background:linear-gradient(to bottom,transparent,var(--surface))}
 .foot-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(2,minmax(0,1fr));gap:32px;padding-block:56px 36px}
