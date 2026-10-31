@@ -2,18 +2,33 @@
 layout: default
 title: News
 permalink: /news/
-description: News from Matheus Puime Pedra's research on disaster resilience, flood economic losses, machine learning and FAIR data.
+description: News, press coverage, articles and talks from Matheus Puime Pedra's research on disaster resilience, flood economic losses, machine learning and FAIR data.
 styles: [post.css]
 ---
-<main class="in post-page">
+<main class="in post-page news-page">
   <span class="label">News</span>
   <h1>All news</h1>
+
   <ul class="news-list">
     {% for post in site.posts %}
-    <li><a href="{{ post.url | relative_url }}">
+    <li class="news-item">
       <span class="when"><span class="tag">{{ post.tag | default: 'News' }}</span><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%-d %b %Y' }}</time></span>
-      <span><h2>{{ post.title }}</h2><p>{{ post.content | strip_html | truncatewords: 40 }}</p></span>
-    </a></li>
+      <div>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.content | strip_html | strip }}</p>
+        {% if post.link %}<a class="go" href="{{ post.link }}" target="_blank" rel="noopener">{{ post.link_label | default: 'read more' }} ↗</a>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h2 class="sub-title">Articles &amp; talks</h2>
+  <ul class="news-list">
+    {% for w in site.data.writing %}
+    <li class="news-item">
+      <span class="when"><span class="tag tag-quiet">{{ w.source }}</span><span>{{ w.length }}</span></span>
+      <div><h2><a href="{{ w.url }}" target="_blank" rel="noopener">{{ w.title }}</a></h2><a class="go" href="{{ w.url }}" target="_blank" rel="noopener">{{ w.action }} ↗</a></div>
+    </li>
     {% endfor %}
   </ul>
 </main>

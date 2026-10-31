@@ -41,8 +41,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700;900&family=Geist+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
-{% for css in page.styles %}<link rel="stylesheet" href="{{ css | prepend: '/assets/css/' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{% for css in page.styles %}<link rel="stylesheet" href="{{ css | prepend: '/assets/css/' | relative_url }}?v={{ site.time | date: '%s' }}">
 {% endfor %}
 </head>
 <body>
@@ -76,8 +76,8 @@
   <div class="in foot-bottom"><span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span><span>San Sebastián · Rio de Janeiro</span></div>
 </footer>
 
-<script src="{{ '/assets/js/site.js' | relative_url }}"></script>
-{% for js in page.scripts %}<script src="{{ js | prepend: '/assets/js/' | relative_url }}"></script>
+<script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+{% for js in page.scripts %}<script src="{{ js | prepend: '/assets/js/' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 {% endfor %}
 </body>
 </html>
