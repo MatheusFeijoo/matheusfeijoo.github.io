@@ -8,6 +8,9 @@ url: https://matheusfeijoo.github.io
 baseurl: ""
 lang: en
 
+# Google Search Console ownership check (HTML tag method)
+google_verification: 0lAaQZUDxwhPrzafiHKwoi2Vrd3M81MHGyO-7qncn6k
+
 author:
   name: Matheus Puime Pedra
   other_names: [Matheus Pedra Puime Feijoó, Matheus Feijoó, M. P. P. Feijoo]
