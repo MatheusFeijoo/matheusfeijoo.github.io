@@ -31,6 +31,22 @@ redirect_from:
     </div>
   </section>
 
+  <section class="s" id="publications">
+    <div class="in">
+      <div class="s-head">
+        <div><span class="label">Publications</span><h2>Selected papers</h2></div>
+        <a class="more" href="{{ '/publications.html' | relative_url }}">all publications →</a>
+      </div>
+      <div class="pubs">
+        {% assign featured = site.data.publications | where: 'featured', true %}
+        {% for p in featured %}
+        <a class="pub" href="{{ p.link }}" target="_blank" rel="noopener"><span class="y"><span class="sw t-{{ p.theme }}"></span>{{ p.year }}</span><span class="t">{{ p.title }}<small>{{ p.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</small></span><span class="v">{{ p.venue }}</span><span class="ar">↗</span></a>
+        {% endfor %}
+      </div>
+      <div class="pubs-foot"><a class="btn" href="{{ '/publications.html' | relative_url }}">See all publications →</a></div>
+    </div>
+  </section>
+
   <section class="s" id="research">
     <div class="in">
       <div class="s-head">
@@ -61,22 +77,6 @@ redirect_from:
           {% endfor %}
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="s" id="publications">
-    <div class="in">
-      <div class="s-head">
-        <div><span class="label">Publications</span><h2>Selected papers</h2></div>
-        <a class="more" href="{{ '/publications.html' | relative_url }}">all publications →</a>
-      </div>
-      <div class="pubs">
-        {% assign featured = site.data.publications | where: 'featured', true %}
-        {% for p in featured %}
-        <a class="pub" href="{{ p.link }}" target="_blank" rel="noopener"><span class="y"><span class="sw t-{{ p.theme }}"></span>{{ p.year }}</span><span class="t">{{ p.title }}<small>{{ p.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</small></span><span class="v">{{ p.venue }}</span><span class="ar">↗</span></a>
-        {% endfor %}
-      </div>
-      <div class="pubs-foot"><a class="btn" href="{{ '/publications.html' | relative_url }}">See all publications →</a></div>
     </div>
   </section>
 
