@@ -1,0 +1,30 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+description: Code, data pipelines, dashboards and tools by Matheus Puime Pedra, from AEMET climate data collection to LLM disaster event extraction and FAIR nanopublications.
+styles: [sections.css, projects.css]
+redirect_from:
+  - /projects.html
+---
+<main>
+  <header class="in page-head">
+    <span class="label">Projects</span>
+    <h1>Projects<span class="dot">.</span></h1>
+    <p>Code, data pipelines, dashboards and tools, small and large. More on <a class="inline" href="https://github.com/MatheusFeijoo" target="_blank" rel="noopener">GitHub ↗</a></p>
+  </header>
+
+  <section class="in page-body">
+    <div class="proj-grid">
+      {% for p in site.data.projects %}
+      <article class="proj">
+        <div class="proj-k"><span>{{ p.kind }}</span><span>{{ p.year }}</span></div>
+        <h2>{{ p.name }}</h2>
+        <p>{{ p.text }}</p>
+        {% if p.tags %}<div class="tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
+        {% if p.links %}<div class="proj-links">{% for l in p.links %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} ↗</a>{% endfor %}</div>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

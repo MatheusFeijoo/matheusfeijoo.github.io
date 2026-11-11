@@ -1,0 +1,31 @@
+---
+layout: default
+title: Experience
+permalink: /experience/
+description: Experience of Matheus Puime Pedra, from Rio de Janeiro to TECNUN in San Sebastián and TU Delft.
+styles: [sections.css]
+scripts: [land-dots.js, globe.js]
+---
+<main>
+  <header class="in page-head">
+    <span class="label">Experience</span>
+    <h1>Experience<span class="dot">.</span></h1>
+    <p>From Rio de Janeiro to San Sebastián and Delft.</p>
+  </header>
+
+  <section class="page-body" id="experience">
+    <div class="in">
+      <div class="xp">
+        <ul class="xp-list">
+          {% for x in site.data.experience %}
+          <li class="xp-item" data-place="{{ x.place }}" tabindex="0"><span class="when{% if x.live %} live{% endif %}">{{ x.when }}</span><div><b>{{ x.title }}</b><span>{{ x.text }}</span></div><span class="where">{{ x.where }}</span></li>
+          {% endfor %}
+        </ul>
+        <figure class="globe-card">
+          <canvas id="globe" aria-label="Globe with pins on Seropédica, Rio de Janeiro, San Sebastián and Delft" role="img"></canvas>
+          <figcaption><span>Drag to turn. Hover an item to find it.</span><span class="places"><button type="button" class="place-btn" data-place="seropedica">Seropédica</button><button type="button" class="place-btn" data-place="rio">Rio</button><button type="button" class="place-btn" data-place="sansebastian">San Sebastián</button><button type="button" class="place-btn" data-place="delft">Delft</button></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>

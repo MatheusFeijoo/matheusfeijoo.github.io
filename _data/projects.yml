@@ -1,0 +1,92 @@
+# Projects page, newest first. The first entry also appears in the "Projects" tile on the homepage.
+# To add one: copy a block, paste it at the top and edit it.
+#   kind: a short label (Data pipeline, Dashboard, Tool, Dataset, Research code...)
+#   links: any number of buttons; label is the button text (code, paper, article, demo...). Leave links out if there are none.
+
+- name: AEMET climate data collection
+  year: "2026"
+  kind: Data pipeline
+  text: >-
+    Python pipeline that downloads the station inventory and the historical daily climate records of the
+    Spanish Meteorological Agency (AEMET OpenData) for one province, several, or all 52. It splits long
+    date ranges into API-sized windows, rate-limits requests and retries on errors.
+  tags: [Python, AEMET OpenData API, climate data, ETL]
+  links:
+    - label: code
+      url: https://github.com/MatheusFeijoo/Aemet_collection
+
+- name: Government flood interventions in Spain
+  year: "2025"
+  kind: Dataset builder
+  text: >-
+    Scripts that build a dataset of government interventions after floods in Spain, used to test whether
+    those interventions reduce economic losses (TU Delft research project).
+  tags: [Python, open government data, floods]
+  links:
+    - label: code
+      url: https://github.com/MatheusFeijoo/floodGovInterventions
+    - label: abstract
+      url: https://research.tue.nl/files/391703968/ICRS-2026-Book_of_Abstracts-260527.pdf#page=259
+
+- name: Disaster events from news headlines
+  year: "2025"
+  kind: LLM tool
+  text: >-
+    Large language models read news articles and turn them into a structured database of disaster events:
+    what happened, where, when and with which impacts.
+  tags: [LLMs, NLP, data extraction]
+  links:
+    - label: paper
+      url: https://doi.org/10.1007/s41060-025-01017-1
+
+- name: City resilience self-assessment
+  year: 2022 → 2024
+  kind: Dashboard
+  text: >-
+    Dashboard that lets cities assess their own resilience and see where to improve, built for the
+    Smart Mature Resilience project.
+  tags: [dashboard, resilience indicators, data visualization]
+  links:
+    - label: paper
+      url: https://doi.org/10.1016/j.cacint.2026.100397
+
+- name: Pantanal forest fires
+  year: "2022"
+  kind: Data visualization
+  text: >-
+    Analysis and maps of satellite fire detections in the Pantanal, the world's largest wetlands, with
+    Pydeck and Streamlit.
+  tags: [Python, Streamlit, Pydeck, satellite data]
+  links:
+    - label: code
+      url: https://github.com/MatheusFeijoo/forestfires
+    - label: article
+      url: https://medium.com/codex/analysing-forest-fires-data-in-the-worlds-largest-wetlands-b5cc9049e28b
+
+- name: Nanopublication workflows
+  year: "2021"
+  kind: Research code
+  text: >-
+    Material and workflows that convert genomics datasets into nanopublications: small machine-readable
+    statements that carry their own provenance.
+  tags: [FAIR data, semantic web, nanopublications]
+  links:
+    - label: code
+      url: https://github.com/MatheusFeijoo/npubmaterial
+
+- name: GíriasIO
+  year: "2019"
+  kind: NLP tool
+  text: >-
+    Slang detection that helps people from different groups understand each other.
+  tags: [Python, NLP]
+  links:
+    - label: code
+      url: https://github.com/MatheusFeijoo/giriasIO
+
+- name: FISHTRACKER
+  year: "2018"
+  kind: Computer vision
+  text: >-
+    Video tracking system for animal behaviour studies at the Oswaldo Cruz Institute (Fiocruz).
+  tags: [C++, OpenCV, computer vision]

@@ -1,0 +1,32 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+description: Contact Matheus Puime Pedra for research collaborations, students, talks, or questions about data science, disaster losses or FAIR data.
+styles: [sections.css]
+scripts: [sections.js, game.js]
+---
+<main>
+  <section class="contact" id="contact">
+    <div class="in contact-grid">
+      <div>
+        <span class="label">Contact</span>
+        <h1>Say hi<span class="dot">.</span></h1>
+        <p>For research collaborations, students, talks, or questions about data science, disaster losses or FAIR data.</p>
+        <div class="mail"><span id="email">{{ site.author.email }}</span><button class="copy" id="copy-btn" type="button">copy</button></div>
+        <div class="socials">
+          {% for l in site.links %}<a href="{{ l.url }}" target="_blank" rel="noopener me">{{ l.name }} ↗</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="game">
+        <div class="game-top"><span>// keep the city dry</span><span>caught <b id="game-score">0</b> · best <b id="game-best">0</b></span></div>
+        <div class="game-stage">
+          <canvas id="game" tabindex="0" aria-label="Mini game: move the levee to catch the rain"></canvas>
+          <div class="game-msg" id="game-msg"><h3>Rain is coming.</h3><p>Move the levee to catch the drops. Every drop you miss raises the water.</p><button class="btn primary" id="game-start" type="button">Play</button></div>
+        </div>
+        <div class="game-help">mouse or touch to move · ← → on keyboard</div>
+      </div>
+    </div>
+  </section>
+</main>

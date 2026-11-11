@@ -1,0 +1,44 @@
+---
+layout: default
+title: Research
+permalink: /research/
+description: Research topics of Matheus Puime Pedra from 2018 to now, from disaster resilience and the economic losses of floods to applied data science, FAIR data and health data.
+styles: [sections.css]
+scripts: [sections.js]
+---
+<main>
+  <header class="in page-head">
+    <span class="label">Research</span>
+    <h1>Research topics<span class="dot">.</span></h1>
+    <p>Main topics investigated, past and present. One thread runs through all of them: data science that helps people make better decisions.</p>
+  </header>
+
+  <section class="page-body" id="research">
+    <div class="in">
+      <div class="rt">
+        <div class="rt-tl" role="tablist" aria-label="Research topics over time" aria-orientation="vertical">
+          <div class="rt-axis" aria-hidden="true"><span>2018</span><span>2019</span><span>2020</span><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>now</span></div>
+          {% for r in site.data.research %}
+          {% assign c1 = r.start | minus: 2017 %}{% if r.end == 'now' %}{% assign c2 = 10 %}{% else %}{% assign c2 = r.end | minus: 2016 %}{% endif %}
+          <button class="rt-row{% if r.current %} current{% endif %}" role="tab" id="bar-{{ r.id }}" aria-controls="era-{{ r.id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
+            <span class="rt-name"><b>{{ r.title }}</b><small>{{ r.label }}</small></span>
+            <span class="rt-track"><i style="grid-column:{{ c1 }}/{{ c2 }}"></i></span>
+          </button>
+          {% endfor %}
+        </div>
+        <div class="eras">
+          {% for r in site.data.research %}
+          <article class="era{% unless forloop.first %} off{% endunless %}" role="tabpanel" id="era-{{ r.id }}" aria-labelledby="bar-{{ r.id }}">
+            <span class="yrs">{% if r.current %}<b>● current focus</b> {% endif %}{{ r.years }}</span>
+            <h3>{{ r.title }}</h3>
+            <p>{{ r.text }}</p>
+            <h4>Where</h4>
+            <ul>{% for w in r.where %}<li>{{ w.name }}<span>{{ w.detail }}</span></li>{% endfor %}</ul>
+            <div class="tags">{% for t in r.tags %}<span>{{ t }}</span>{% endfor %}</div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

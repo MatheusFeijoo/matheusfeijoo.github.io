@@ -46,20 +46,22 @@
 {% for css in page.styles %}<link rel="stylesheet" href="{{ css | prepend: '/assets/css/' | relative_url }}?v={{ site.time | date: '%s' }}">
 {% endfor %}
 </head>
-<body>
+<body{% if page.home %} class="is-home"{% endif %}>
 
 <header class="top">
   <div class="in">
     <a class="wm" href="{{ '/' | relative_url }}"><b>{{ site.title }}</b></a>
     <nav class="links" aria-label="Sections">
-      <a href="{{ '/publications.html' | relative_url }}"{% if page.url == '/publications.html' %} aria-current="page"{% endif %}>Publications</a><a href="{{ '/#research' | relative_url }}">Research</a><a href="{{ '/#experience' | relative_url }}">Experience</a><a href="{{ '/#writing' | relative_url }}">News</a>
+      {% assign nav = "/research/:Research,/publications.html:Publications,/projects/:Projects,/news/:News,/experience/:Experience" | split: "," %}
+      {% for n in nav %}{% assign kv = n | split: ":" %}<a href="{{ kv[0] | relative_url }}"{% if page.url == kv[0] %} aria-current="page"{% endif %}>{{ kv[1] }}</a>{% endfor %}
     </nav>
-    <a class="cta" href="{{ '/#contact' | relative_url }}">Get in touch ↗</a>
+    <a class="cta" href="{{ '/contact/' | relative_url }}"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Get in touch ↗</a>
   </div>
 </header>
 
 {{ content }}
 
+{% unless page.home %}
 <footer class="site-foot">
   <div class="in foot-grid">
     <div class="foot-brand">
@@ -68,7 +70,7 @@
       <a class="foot-mail" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
     </div>
     <nav class="foot-col" aria-label="Site"><h2>Site</h2>
-      <a href="{{ '/publications.html' | relative_url }}">Publications</a><a href="{{ '/#research' | relative_url }}">Research</a><a href="{{ '/#experience' | relative_url }}">Experience</a><a href="{{ '/news/' | relative_url }}">News</a><a href="{{ '/#contact' | relative_url }}">Contact</a>
+      {% for n in nav %}{% assign kv = n | split: ":" %}<a href="{{ kv[0] | relative_url }}">{{ kv[1] }}</a>{% endfor %}<a href="{{ '/contact/' | relative_url }}">Contact</a>
     </nav>
     <nav class="foot-col" aria-label="Profiles"><h2>Profiles</h2>
       {% for l in site.links %}<a href="{{ l.url }}" target="_blank" rel="noopener me">{{ l.name }}</a>{% endfor %}
@@ -76,6 +78,7 @@
   </div>
   <div class="in foot-bottom"><span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span><span>San Sebastián · Rio de Janeiro</span></div>
 </footer>
+{% endunless %}
 
 <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 {% for js in page.scripts %}<script src="{{ js | prepend: '/assets/js/' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

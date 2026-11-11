@@ -1,13 +1,14 @@
-/* Homepage behaviour: research timeline, rotating role, copy email. */
+/* Inner pages: research timeline (research page), copy email (contact page). */
 (function(){
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   /* research timeline: hovering or selecting a topic shows its details */
   var rows=[].slice.call(document.querySelectorAll('.rt-row'));
   function pick(t,focus){
     rows.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on?'true':'false');x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).classList.toggle('off',!on);});
     if(focus)t.focus();
   }
+  /* open a topic from the URL, e.g. /research/#res (used by the homepage focus links) */
+  var fromHash=document.getElementById('bar-'+location.hash.slice(1));
+  if(fromHash&&rows.indexOf(fromHash)>-1)pick(fromHash);
   rows.forEach(function(t,i){
     t.addEventListener('click',function(){pick(t);});
     t.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse'&&t.getAttribute('aria-selected')!=='true')pick(t);});
@@ -18,12 +19,6 @@
       if(n){e.preventDefault();pick(n,true);}
     });
   });
-
-  /* rotating role under the name */
-  var roles=['Professor','Data Scientist','Researcher'],ri=0,rot=document.getElementById('rot');
-  if(rot&&!reduce){
-    setInterval(function(){ri=(ri+1)%roles.length;rot.textContent=roles[ri];rot.classList.remove('swap');void rot.offsetWidth;rot.classList.add('swap');},2800);
-  }
 
   /* copy email */
   var btn=document.getElementById('copy-btn');

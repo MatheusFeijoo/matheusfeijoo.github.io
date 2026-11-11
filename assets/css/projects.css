@@ -1,0 +1,14 @@
+/* Projects page: a grid of cards from _data/projects.yml. */
+.inline{color:var(--accent)}
+.inline:hover{text-decoration:underline}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:16px}
+.proj{display:grid;grid-template-rows:auto auto 1fr auto auto;gap:10px;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:22px;transition:border-color .25s}
+.proj:hover{border-color:var(--line-strong)}
+.proj-k{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.proj-k span:first-child::before{content:"// ";color:var(--accent)}
+.proj h2{margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.proj p{margin:0;color:var(--muted);font-size:14.5px}
+.proj .tags{margin-top:2px}
+.proj-links{display:flex;flex-wrap:wrap;gap:8px;padding-top:6px}
+.proj-links a{font-family:var(--mono);font-size:12.5px;color:var(--text);border:1px solid var(--line-strong);border-radius:999px;padding:4px 12px}
+.proj-links a:hover{border-color:var(--accent);color:var(--accent)}
